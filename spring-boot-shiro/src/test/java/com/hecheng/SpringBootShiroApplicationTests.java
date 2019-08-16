@@ -14,14 +14,14 @@ public class SpringBootShiroApplicationTests {
 	@Test
 	public void contextLoads() {
 		// 用户名
-		String username = "Admin";
+		String username = "Per";
 		// 用户密码
 		String password = "123";
 		// 加密方式
 		String hashAlgorithName = "MD5";
 		// 加密次数
 		int hashIterations = 1;
-		ByteSource salt = ByteSource.Util.bytes("Admin" + "admin");
+		ByteSource salt = ByteSource.Util.bytes("Per" + "per");
 		System.out.println(salt);
 		Object obj = new SimpleHash(hashAlgorithName, password,
 				salt, hashIterations);
