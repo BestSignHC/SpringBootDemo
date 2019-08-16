@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hecheng.dao.UserRoleDao">
+    <resultMap id="BaseResultMap" type="com.hecheng.entity.UserRole">
+        <result column="user_id" property="userId"/>
+        <result column="role_id" property="roleId"/>
+    </resultMap>
+
+    <insert id="addUserRole" parameterType="com.hecheng.entity.UserRole">
+        INSERT INTO sys_users_roles
+        (user_id, role_id,)
+        VALUES
+        (#{userId}, #{roleId});
+    </insert>
+
+    <select id="findRoles" parameterType="java.lang.Object" resultMap="BaseResultMap">
+        SELECT * FROM sys_users_roles WHERE user_id = #{userId};
+    </select>
+
+    <delete id="removeUserRole" parameterType="com.hecheng.entity.UserRole">
+        DELETE FROM sys_users_roles WHERE user_id = #{userId} AND role_id = #{roleId};
+    </delete>
+</mapper>

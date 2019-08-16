@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hecheng.dao.RoleDao">
+    <resultMap id="BaseResultMap" type="com.hecheng.entity.Role">
+        <result column="id" property="id"/>
+        <result column="role" property="role"/>
+        <result column="description" property="description"/>
+        <result column="available" property="available"/>
+    </resultMap>
+
+    <insert id="createRole" parameterType="com.hecheng.entity.Role">
+        INSERT INTO sys_roles
+        (role, description, available)
+        VALUES
+        (#{role}, #{description}, #{available});
+    </insert>
+
+    <delete id="deleteRole" parameterType="java.lang.Object">
+        DELETE FROM sys_roles WHERE id = #{roleId};
+    </delete>
+
+    <select id="find" parameterType="java.lang.Object" resultMap="BaseResultMap">
+        SELECT * FROM sys_roles WHERE id = #{roleId}
+    </select>
+</mapper>

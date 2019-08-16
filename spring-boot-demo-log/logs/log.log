@@ -1,0 +1,132 @@
+[2018-03-06 18:08:48,706] HV000001: Hibernate Validator 6.0.7.Final
+[2018-03-06 18:08:48,965] Starting SpringBootDemoApplication on LAPTOP-167RLVEQ with PID 1472 (D:\study\spring-boot\spring-boot-demo-log\target\classes started by ChengH in D:\study\spring-boot\spring-boot-demo-log)
+[2018-03-06 18:08:48,966] No active profile set, falling back to default profiles: default
+[2018-03-06 18:08:49,037] Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5e1eee73: startup date [Tue Mar 06 18:08:49 CST 2018]; root of context hierarchy
+[2018-03-06 18:08:51,452] Tomcat initialized with port(s): 8089 (http)
+[2018-03-06 18:08:51,596] Root WebApplicationContext: initialization completed in 2562 ms
+[2018-03-06 18:08:51,802] Servlet dispatcherServlet mapped to [/]
+[2018-03-06 18:08:51,807] Mapping filter: 'characterEncodingFilter' to: [/*]
+[2018-03-06 18:08:51,807] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[2018-03-06 18:08:51,807] Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[2018-03-06 18:08:51,807] Mapping filter: 'requestContextFilter' to: [/*]
+[2018-03-06 18:08:52,242] Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5e1eee73: startup date [Tue Mar 06 18:08:49 CST 2018]; root of context hierarchy
+[2018-03-06 18:08:52,352] Mapped "{[/]}" onto public java.lang.String com.hc.controller.HelloSpringBoot.index()
+[2018-03-06 18:08:52,360] Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[2018-03-06 18:08:52,361] Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[2018-03-06 18:08:52,410] Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2018-03-06 18:08:52,410] Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2018-03-06 18:08:52,469] Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2018-03-06 18:08:52,669] LiveReload server is running on port 35729
+[2018-03-06 18:08:52,752] Registering beans for JMX exposure on startup
+[2018-03-06 18:08:52,812] Tomcat started on port(s): 8089 (http) with context path ''
+[2018-03-06 18:08:52,816] Started SpringBootDemoApplication in 4.301 seconds (JVM running for 4.835)
+[2018-03-06 18:09:25,862] FrameworkServlet 'dispatcherServlet': initialization started
+[2018-03-06 18:09:25,893] FrameworkServlet 'dispatcherServlet': initialization completed in 31 ms
+[2018-03-06 18:10:24,352] Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5e1eee73: startup date [Tue Mar 06 18:08:49 CST 2018]; root of context hierarchy
+[2018-03-06 18:10:24,358] Unregistering JMX-exposed beans on shutdown
+[2018-03-06 18:10:25,461] Starting SpringBootDemoApplication on LAPTOP-167RLVEQ with PID 1472 (D:\study\spring-boot\spring-boot-demo-log\target\classes started by ChengH in D:\study\spring-boot\spring-boot-demo-log)
+[2018-03-06 18:10:25,494] No active profile set, falling back to default profiles: default
+[2018-03-06 18:10:25,508] Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3907862: startup date [Tue Mar 06 18:10:25 CST 2018]; root of context hierarchy
+[2018-03-06 18:10:26,232] Tomcat initialized with port(s): 8089 (http)
+[2018-03-06 18:10:26,262] Root WebApplicationContext: initialization completed in 754 ms
+[2018-03-06 18:10:26,318] Servlet dispatcherServlet mapped to [/]
+[2018-03-06 18:10:26,318] Mapping filter: 'characterEncodingFilter' to: [/*]
+[2018-03-06 18:10:26,319] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[2018-03-06 18:10:26,319] Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[2018-03-06 18:10:26,319] Mapping filter: 'requestContextFilter' to: [/*]
+[2018-03-06 18:10:26,493] Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3907862: startup date [Tue Mar 06 18:10:25 CST 2018]; root of context hierarchy
+[2018-03-06 18:10:26,503] Mapped "{[/]}" onto public java.lang.String com.hc.controller.HelloSpringBoot.index()
+[2018-03-06 18:10:26,509] Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[2018-03-06 18:10:26,509] Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[2018-03-06 18:10:26,533] Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2018-03-06 18:10:26,533] Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2018-03-06 18:10:26,548] Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2018-03-06 18:10:26,620] LiveReload server is running on port 35729
+[2018-03-06 18:10:26,818] Registering beans for JMX exposure on startup
+[2018-03-06 18:10:26,958] Tomcat started on port(s): 8089 (http) with context path ''
+[2018-03-06 18:10:26,959] Started SpringBootDemoApplication in 1.862 seconds (JVM running for 98.978)
+[2018-03-06 18:10:26,962] Condition evaluation unchanged
+[2018-03-06 18:10:27,418] HV000001: Hibernate Validator 6.0.7.Final
+[2018-03-06 18:10:27,735] Starting SpringBootDemoApplication on LAPTOP-167RLVEQ with PID 12388 (D:\study\spring-boot\spring-boot-demo-log\target\classes started by ChengH in D:\study\spring-boot\spring-boot-demo-log)
+[2018-03-06 18:10:27,735] No active profile set, falling back to default profiles: default
+[2018-03-06 18:10:27,823] Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7e0a8d91: startup date [Tue Mar 06 18:10:27 CST 2018]; root of context hierarchy
+[2018-03-06 18:10:29,963] Tomcat initialized with port(s): 8089 (http)
+[2018-03-06 18:10:30,127] Root WebApplicationContext: initialization completed in 2308 ms
+[2018-03-06 18:10:30,301] Servlet dispatcherServlet mapped to [/]
+[2018-03-06 18:10:30,306] Mapping filter: 'characterEncodingFilter' to: [/*]
+[2018-03-06 18:10:30,307] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[2018-03-06 18:10:30,307] Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[2018-03-06 18:10:30,307] Mapping filter: 'requestContextFilter' to: [/*]
+[2018-03-06 18:10:30,671] Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7e0a8d91: startup date [Tue Mar 06 18:10:27 CST 2018]; root of context hierarchy
+[2018-03-06 18:10:30,765] Mapped "{[/]}" onto public java.lang.String com.hc.controller.HelloSpringBoot.index()
+[2018-03-06 18:10:30,772] Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[2018-03-06 18:10:30,773] Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[2018-03-06 18:10:30,815] Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2018-03-06 18:10:30,816] Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2018-03-06 18:10:30,857] Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2018-03-06 18:10:31,025] Unable to start LiveReload server
+[2018-03-06 18:10:31,124] Registering beans for JMX exposure on startup
+[2018-03-06 18:10:31,198] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+[2018-03-06 18:10:31,202] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8089 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8089, or configure this application to listen on another port.
+
+[2018-03-06 18:10:31,205] Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7e0a8d91: startup date [Tue Mar 06 18:10:27 CST 2018]; root of context hierarchy
+[2018-03-06 18:10:31,208] Unregistering JMX-exposed beans on shutdown
+[2018-03-06 18:11:12,887] FrameworkServlet 'dispatcherServlet': initialization started
+[2018-03-06 18:11:12,893] FrameworkServlet 'dispatcherServlet': initialization completed in 5 ms
+[2018-03-06 18:23:59,784] Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3907862: startup date [Tue Mar 06 18:10:25 CST 2018]; root of context hierarchy
+[2018-03-06 18:23:59,789] Unregistering JMX-exposed beans on shutdown
+[2018-03-06 18:24:00,373] Starting SpringBootDemoApplication on LAPTOP-167RLVEQ with PID 1472 (D:\study\spring-boot\spring-boot-demo-log\target\classes started by ChengH in D:\study\spring-boot\spring-boot-demo-log)
+[2018-03-06 18:24:00,374] No active profile set, falling back to default profiles: default
+[2018-03-06 18:24:00,379] Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5141b053: startup date [Tue Mar 06 18:24:00 CST 2018]; root of context hierarchy
+[2018-03-06 18:24:00,935] Tomcat initialized with port(s): 8089 (http)
+[2018-03-06 18:24:00,984] Root WebApplicationContext: initialization completed in 605 ms
+[2018-03-06 18:24:01,010] Servlet dispatcherServlet mapped to [/]
+[2018-03-06 18:24:01,010] Mapping filter: 'characterEncodingFilter' to: [/*]
+[2018-03-06 18:24:01,011] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[2018-03-06 18:24:01,011] Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[2018-03-06 18:24:01,011] Mapping filter: 'requestContextFilter' to: [/*]
+[2018-03-06 18:24:01,316] Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5141b053: startup date [Tue Mar 06 18:24:00 CST 2018]; root of context hierarchy
+[2018-03-06 18:24:01,332] Mapped "{[/]}" onto public java.lang.String com.hc.controller.HelloSpringBoot.index()
+[2018-03-06 18:24:01,338] Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[2018-03-06 18:24:01,338] Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[2018-03-06 18:24:01,349] Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2018-03-06 18:24:01,351] Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2018-03-06 18:24:01,381] Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2018-03-06 18:24:01,449] LiveReload server is running on port 35729
+[2018-03-06 18:24:01,573] Registering beans for JMX exposure on startup
+[2018-03-06 18:24:01,607] Tomcat started on port(s): 8089 (http) with context path ''
+[2018-03-06 18:24:01,609] Started SpringBootDemoApplication in 1.354 seconds (JVM running for 913.628)
+[2018-03-06 18:24:01,616] Condition evaluation unchanged
+[2018-03-06 18:24:04,568] Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.hc.SpringBootDemoApplicationTests], using SpringBootContextLoader
+[2018-03-06 18:24:04,575] Could not detect default resource locations for test class [com.hc.SpringBootDemoApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+[2018-03-06 18:24:04,577] Could not detect default configuration classes for test class [com.hc.SpringBootDemoApplicationTests]: SpringBootDemoApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[2018-03-06 18:24:04,919] Found @SpringBootConfiguration com.hc.SpringBootDemoApplication for test class com.hc.SpringBootDemoApplicationTests
+[2018-03-06 18:24:05,115] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[2018-03-06 18:24:05,139] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6e4784bc, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@34b7ac2f, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@e056f20, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@4b0b0854, org.springframework.test.context.support.DirtiesContextTestExecutionListener@19bb07ed, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@10e41621, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@353d0772, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@2667f029, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@67a20f67, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@57c758ac]
+[2018-03-06 18:24:05,319] HV000001: Hibernate Validator 6.0.7.Final
+[2018-03-06 18:24:05,599] Starting SpringBootDemoApplicationTests on LAPTOP-167RLVEQ with PID 1612 (started by ChengH in D:\study\spring-boot\spring-boot-demo-log)
+[2018-03-06 18:24:05,599] No active profile set, falling back to default profiles: default
+[2018-03-06 18:24:05,663] Refreshing org.springframework.web.context.support.GenericWebApplicationContext@c333c60: startup date [Tue Mar 06 18:24:05 CST 2018]; root of context hierarchy
+[2018-03-06 18:24:08,642] Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@c333c60: startup date [Tue Mar 06 18:24:05 CST 2018]; root of context hierarchy
+[2018-03-06 18:24:08,772] Mapped "{[/]}" onto public java.lang.String com.hc.controller.HelloSpringBoot.index()
+[2018-03-06 18:24:08,778] Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[2018-03-06 18:24:08,779] Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[2018-03-06 18:24:08,835] Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2018-03-06 18:24:08,836] Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2018-03-06 18:24:08,910] Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2018-03-06 18:24:09,347] Started SpringBootDemoApplicationTests in 4.109 seconds (JVM running for 5.918)
+[2018-03-06 18:24:09,632] Closing org.springframework.web.context.support.GenericWebApplicationContext@c333c60: startup date [Tue Mar 06 18:24:05 CST 2018]; root of context hierarchy

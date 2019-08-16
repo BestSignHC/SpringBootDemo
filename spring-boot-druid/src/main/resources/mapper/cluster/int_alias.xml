@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hecheng.mapper.cluster.IntAliasMapper">
+    <resultMap id="BaseResultMap" type="com.hecheng.domain.IntAlias">
+        <result column="alias_id" property="aliasId"/>
+        <result column="custom_id" property="customId"/>
+        <result column="bestsign_id" property="bestSignID"/>
+        <result column="developer_id" property="developerId"/>
+        <result column="ctime" property="ctime"/>
+        <result column="utime" property="etime"/>
+    </resultMap>
+
+    <select id="findById" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        SELECT * FROM int_alias where alias_id = #{aliasId}
+    </select>
+</mapper>
