@@ -13,7 +13,9 @@ import org.apache.shiro.session.mgt.SessionManager;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
+import org.apache.shiro.web.mgt.CookieRememberMeManager;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
+import org.apache.shiro.web.servlet.SimpleCookie;
 import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import java.security.NoSuchAlgorithmException;
 import java.util.*;
 
 @Configuration
@@ -49,7 +54,9 @@ public class ShiroConfig {
 
         filterChainMap.put("/logout", "logout");
 //        filterChainMap.put("/admin", "roles");  // 通过注解@RequiresRoles("admin")设置了
-        filterChainMap.put("/**", "authc");
+        // 如果使用rememberMe,就需要使用 user ,那么需要自己在login动作中执行subject.login
+//        filterChainMap.put("/**", "authc");
+        filterChainMap.put("/**", "user");
 
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainMap);
         return shiroFilterFactoryBean;
@@ -67,6 +74,8 @@ public class ShiroConfig {
         defaultWebSecurityManager.setCacheManager(cacheManager());
         defaultWebSecurityManager.setSessionManager(sessionManager());
 
+        // rememberMe 设置
+        defaultWebSecurityManager.setRememberMeManager(cookieRememberMeManager());
         return defaultWebSecurityManager;
     }
 
@@ -109,5 +118,20 @@ public class ShiroConfig {
         DefaultAdvisorAutoProxyCreator advisorAutoProxyCreator = new DefaultAdvisorAutoProxyCreator();
         advisorAutoProxyCreator.setProxyTargetClass(true);
         return advisorAutoProxyCreator;
+    }
+
+    // RememberMe
+    public SimpleCookie rememberMeCookie() {
+        SimpleCookie simpleCookie = new SimpleCookie("rememberMe");
+        simpleCookie.setHttpOnly(true);
+        simpleCookie.setMaxAge(24 * 3600);  // 一天
+        return simpleCookie;
+    }
+
+    public CookieRememberMeManager cookieRememberMeManager() {
+        CookieRememberMeManager manager = new CookieRememberMeManager();
+        manager.setCookie(rememberMeCookie());
+        manager.setCipherKey(Base64.getDecoder().decode("Xyd5xGFFYopYFrU/qtur3A=="));
+        return manager;
     }
 }

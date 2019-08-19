@@ -7,6 +7,12 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
+import java.util.Base64;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class SpringBootShiroApplicationTests {
@@ -26,6 +32,17 @@ public class SpringBootShiroApplicationTests {
 		Object obj = new SimpleHash(hashAlgorithName, password,
 				salt, hashIterations);
 		System.out.println(obj);
+	}
+
+	@Test
+	public void test() {
+		SecretKey key = null;
+		try {
+			KeyGenerator keyGenerator = KeyGenerator.getInstance("AES");
+			key = keyGenerator.generateKey();
+			System.out.println(Base64.getEncoder().encodeToString(key.getEncoded()));
+		} catch (NoSuchAlgorithmException e) {
+		}
 	}
 
 }

@@ -1,12 +1,14 @@
 package com.hecheng.controller;
 
-import org.apache.shiro.authc.IncorrectCredentialsException;
-import org.apache.shiro.authc.UnknownAccountException;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.*;
+import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,22 +22,31 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public String loginAction(HttpServletRequest request, HttpServletResponse response) {
-        String exceptionClassName = (String)request.getAttribute("shiroLoginFailure");
-        System.out.println(exceptionClassName);
+    public String loginAction(HttpServletRequest request,
+                              @RequestParam("username") String username,
+                              @RequestParam("password") String password,
+                              @RequestParam("rememberMe") Boolean rememberMe) {
         String error = null;
-        if(UnknownAccountException.class.getName().equals(exceptionClassName)) {
+        UsernamePasswordToken token = new UsernamePasswordToken(username, password);
+        token.setRememberMe(rememberMe);
+        Subject subject = SecurityUtils.getSubject();
+        try {
+            subject.login(token);
+        } catch (UnknownAccountException e) {
             error = "用户名/密码错误";
-        } else if(IncorrectCredentialsException.class.getName().equals(exceptionClassName)) {
+        } catch (IncorrectCredentialsException e) {
             error = "用户名/密码错误";
-        } else if(exceptionClassName != null) {
-            error = "其他错误：" + exceptionClassName;
+        } catch (LockedAccountException e) {
+            error = "用户被锁定";
+        } catch (Exception e) {
+            error = "其他错误：" + e.getMessage();
+        }
+        if (null != error) {
+            request.setAttribute("error", error);
+            return "login";
         }
         else {
             return "success";
         }
-
-        request.setAttribute("error", error);
-        return "login";
     }
 }
