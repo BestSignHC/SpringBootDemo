@@ -122,7 +122,7 @@ public class ShiroConfig {
 
     // RememberMe
     public SimpleCookie rememberMeCookie() {
-        SimpleCookie simpleCookie = new SimpleCookie("rememberMe");
+        SimpleCookie simpleCookie = new SimpleCookie("rememberMe"); // cookie name
         simpleCookie.setHttpOnly(true);
         simpleCookie.setMaxAge(24 * 3600);  // 一天
         return simpleCookie;
