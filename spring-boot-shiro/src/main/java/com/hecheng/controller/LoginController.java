@@ -17,7 +17,11 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginController {
 
     @GetMapping("/login")
-    public String loginFormAction() {
+    public String loginFormAction(HttpServletRequest request,
+                                  @RequestParam(name = "kickOut", required = false) String kickOut) {
+        if ("1".equals(kickOut)) {
+            request.setAttribute("error", "您已在其他地方登陆！");
+        }
         return "login";
     }
 
@@ -25,9 +29,12 @@ public class LoginController {
     public String loginAction(HttpServletRequest request,
                               @RequestParam("username") String username,
                               @RequestParam("password") String password,
-                              @RequestParam("rememberMe") Boolean rememberMe) {
+                              @RequestParam(name = "rememberMe", required = false) Boolean rememberMe) {
         String error = null;
         UsernamePasswordToken token = new UsernamePasswordToken(username, password);
+        if (null == rememberMe) {
+            rememberMe = false;
+        }
         token.setRememberMe(rememberMe);
         Subject subject = SecurityUtils.getSubject();
         try {

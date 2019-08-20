@@ -1,13 +1,12 @@
 package com.hecheng.config;
 
+import com.hecheng.filter.KickOutFilter;
 import com.hecheng.realm.UserRealm;
 import com.hecheng.session.MySessionListener;
-import org.apache.shiro.authc.credential.CredentialsMatcher;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.cache.CacheManager;
 import org.apache.shiro.cache.MemoryConstrainedCacheManager;
 import org.apache.shiro.mgt.SecurityManager;
-import org.apache.shiro.realm.Realm;
 import org.apache.shiro.session.SessionListener;
 import org.apache.shiro.session.mgt.SessionManager;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
@@ -18,15 +17,11 @@ import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.apache.shiro.web.servlet.SimpleCookie;
 import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 
-import javax.crypto.KeyGenerator;
-import javax.crypto.SecretKey;
-import java.security.NoSuchAlgorithmException;
+import javax.servlet.Filter;
 import java.util.*;
 
 @Configuration
@@ -50,13 +45,18 @@ public class ShiroConfig {
         shiroFilterFactoryBean.setSuccessUrl("/success");
         shiroFilterFactoryBean.setUnauthorizedUrl("/unauth");
 
+        Map<String, Filter> filters = new HashMap<>();
+        filters.put("kickOut", kickOutFilter());
+
+        shiroFilterFactoryBean.setFilters(filters);
+
         Map<String, String> filterChainMap = new LinkedHashMap<>();
 
         filterChainMap.put("/logout", "logout");
 //        filterChainMap.put("/admin", "roles");  // 通过注解@RequiresRoles("admin")设置了
         // 如果使用rememberMe,就需要使用 user ,那么需要自己在login动作中执行subject.login
 //        filterChainMap.put("/**", "authc");
-        filterChainMap.put("/**", "user");
+        filterChainMap.put("/**", "kickOut,user");
 
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainMap);
         return shiroFilterFactoryBean;
@@ -133,5 +133,15 @@ public class ShiroConfig {
         manager.setCookie(rememberMeCookie());
         manager.setCipherKey(Base64.getDecoder().decode("Xyd5xGFFYopYFrU/qtur3A=="));
         return manager;
+    }
+
+    // 设置并发控制
+    public KickOutFilter kickOutFilter() {
+        KickOutFilter kickOutFilter = new KickOutFilter();
+        kickOutFilter.setKickOutUrl("/login?kickOut=1");
+        kickOutFilter.setMaxSession(2);
+        kickOutFilter.setSessionManager(sessionManager());
+
+        return kickOutFilter;
     }
 }

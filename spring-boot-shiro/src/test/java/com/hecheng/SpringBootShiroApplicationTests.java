@@ -12,6 +12,8 @@ import javax.crypto.SecretKey;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
+import java.util.LinkedList;
+import java.util.Queue;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -43,6 +45,17 @@ public class SpringBootShiroApplicationTests {
 			System.out.println(Base64.getEncoder().encodeToString(key.getEncoded()));
 		} catch (NoSuchAlgorithmException e) {
 		}
+	}
+
+	@Test
+	public void testQueue() {
+		Queue q = new LinkedList();
+		q.add(11);
+		q.add(22);
+		q.add(33);
+
+		System.out.println(q.remove());
+		System.out.println(q.size());
 	}
 
 }
