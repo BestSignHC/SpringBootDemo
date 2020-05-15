@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hecheng.mapper.UserInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.hecheng.entity.UserInfo">
+    <result column="user_id" property="userId"/>
+    <result column="account" property="account"/>
+    <result column="user_name" property="userName"/>
+    <result column="password" property="password" />
+  </resultMap>
+
+  <insert id="add" parameterType="com.hecheng.entity.UserInfo">
+    INSERT INTO
+    `user_info`(`user_id`, `user_name`, `account`, `password`)
+    VALUES (#{userId}, #{userName}, #{account}, #{password})
+  </insert>
+
+  <select id="selectById" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select * from user_info where user_id = #{userId};
+  </select>
+</mapper>

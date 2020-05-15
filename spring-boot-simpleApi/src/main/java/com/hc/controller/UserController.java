@@ -1,6 +1,7 @@
 package com.hc.controller;
 
 import com.hc.domin.User;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
@@ -18,7 +19,7 @@ public class UserController {
     }
 
     @RequestMapping(value="/", method = RequestMethod.POST)
-    public String postUser(@ModelAttribute User user) {
+    public String postUser(@RequestBody @Validated User user) {
         users.put(user.getUserId(), user);
 
         return "ok";

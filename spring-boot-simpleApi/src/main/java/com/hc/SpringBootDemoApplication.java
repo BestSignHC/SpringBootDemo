@@ -12,7 +12,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-@EnableAutoConfiguration //一般放置在启动class上
 public class SpringBootDemoApplication {
 
 	public static void main(String[] args) {
